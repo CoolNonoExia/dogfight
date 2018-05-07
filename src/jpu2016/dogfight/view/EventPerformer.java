@@ -9,7 +9,9 @@ import java.awt.event.KeyEvent;
 public class EventPerformer implements IEventPerformer {
     private IOrderPerformer orderPerformer;
 
-    public EventPerformer(IOrderPerformer orderPerformer){}
+    public EventPerformer(IOrderPerformer orderPerformer){
+        this.orderPerformer = orderPerformer;
+    }
 
     @Override
     public void eventPerform(KeyEvent keyCode){}

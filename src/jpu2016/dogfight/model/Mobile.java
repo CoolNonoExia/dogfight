@@ -1,7 +1,6 @@
 package jpu2016.dogfight.model;
 
 import java.awt.*;
-import java.util.ArrayList;
 
 public class Mobile implements IMobile {
     private int speed;
@@ -11,7 +10,11 @@ public class Mobile implements IMobile {
     private Position position;
 
     public Mobile(Direction direction, Position position, Dimension dimension, int speed, String image){
-        images = new Image[4];
+        this.images = new Image[4];
+        this.direction = direction;
+        this.position = position;
+        this.dimension = dimension;
+        this.speed = speed;
     }
 
     private void moveUp(){
@@ -36,37 +39,37 @@ public class Mobile implements IMobile {
 
     @Override
     public Direction getDirection() {
-        return null;
+        return direction;
     }
 
     @Override
     public void setDirection(Direction direction) {
-
+        this.direction = direction;
     }
 
     @Override
     public Point getPosition() {
-        return null;
+        return new Point();
     }
 
     @Override
     public Dimension getDimension() {
-        return null;
+        return dimension;
     }
 
     @Override
     public int getWidth() {
-        return 0;
+        return dimension.getWidth();
     }
 
     @Override
     public int getHeight() {
-        return 0;
+        return dimension.getHeight();
     }
 
     @Override
     public int getSpeed() {
-        return 0;
+        return speed;
     }
 
     @Override

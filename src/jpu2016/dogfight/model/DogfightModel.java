@@ -9,7 +9,10 @@ public class DogfightModel extends Observable implements IDogfightModel {
     private Sky sky;
     private ArrayList<IMobile> mobiles;
 
-    public DogfightModel(){}
+    public DogfightModel(){
+        this.mobiles = new ArrayList<>();
+        this.sky = new Sky();
+    }
 
 
     @Override
@@ -24,17 +27,17 @@ public class DogfightModel extends Observable implements IDogfightModel {
 
     @Override
     public void addMobile(IMobile mobile) {
-
+        mobiles.add(mobile);
     }
 
     @Override
     public void removeMobile(IMobile mobile) {
-
+        mobiles.remove(mobile);
     }
 
     @Override
     public ArrayList<IMobile> getMobile() {
-        return null;
+        return mobiles;
     }
 
     @Override

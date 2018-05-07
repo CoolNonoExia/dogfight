@@ -11,7 +11,9 @@ public class DogfightView implements IViewSystem, Runnable {
     private GraphicsBuilder graphicsBuilder;
     private GameFrame gameFrame;
 
-    public DogfightView(IOrderPerformer orderPerformer, IDogfightModel dogfightModel, Observable observable) {}
+    public DogfightView(IOrderPerformer orderPerformer, IDogfightModel dogfightModel, Observable observable) {
+
+    }
 
     @Override
     public void run() {

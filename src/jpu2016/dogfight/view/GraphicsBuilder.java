@@ -12,7 +12,9 @@ public class GraphicsBuilder implements IGraphicsBuilder {
     private BufferedImage emptySky;
     private IDogfightModel dogfightModel;
 
-    public GraphicsBuilder(IDogfightModel dogfightModel){}
+    public GraphicsBuilder(IDogfightModel dogfightModel){
+        this.dogfightModel = dogfightModel;
+    }
 
     private void buildEmptySky(){}
 
