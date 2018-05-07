@@ -5,6 +5,6 @@ public class Cloud extends Mobile {
     private static String IMAGE = "cloud";
 
     public Cloud(Direction direction, Dimension dimension) {
-        super(direction, new Position(0, 0, WIDTH, HEIGHT), dimension, SPEED, IMAGE);
+        super(direction, null, dimension, SPEED, IMAGE);
     }
 }

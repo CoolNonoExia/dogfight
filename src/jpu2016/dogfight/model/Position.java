@@ -4,15 +4,10 @@ public class Position {
     private double x, y, maxX, maxY;
 
     public Position(double x, double y, double maxX, double maxY) {
-        this.x = x;
-        this.y = y;
-        this.maxX = maxX;
-        this.maxY = maxY;
+
     }
 
     public Position(Position position) {
-        this.x = position.getX();
-        this.y = position.getY();
     }
 
     public double getX() {

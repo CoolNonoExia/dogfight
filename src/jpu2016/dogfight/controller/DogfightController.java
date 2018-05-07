@@ -1,7 +1,6 @@
 package jpu2016.dogfight.controller;
 
 import jpu2016.dogfight.model.IDogfightModel;
-import jpu2016.dogfight.model.Missile;
 import jpu2016.dogfight.view.IViewSystem;
 
 public class DogfightController implements IOrderPerformer {
@@ -9,15 +8,11 @@ public class DogfightController implements IOrderPerformer {
     private IViewSystem viewSystem;
     private IDogfightModel dogfightModel;
 
-    public DogfightController(IDogfightModel dogfightModel){
-        this.dogfightModel = dogfightModel;
-    }
+    public DogfightController(IDogfightModel dogfightModel){}
 
     public void play(){}
 
-    public void setViewSystem(IViewSystem viewSystem){
-        this.viewSystem = viewSystem;
-    }
+    public void setViewSystem(IViewSystem viewSystem){}
 
     private void launchMissile(int player){}
 

@@ -9,9 +9,7 @@ import java.awt.event.KeyListener;
 public class GameFrame extends JFrame implements KeyListener {
     private IEventPerformer eventPerformer;
 
-    public GameFrame(String title, IEventPerformer performer, IGraphicsBuilder graphicsBuilder, Observable observable){
-        this.eventPerformer = performer;
-    }
+    public GameFrame(String title, IEventPerformer performer, IGraphicsBuilder graphicsBuilder, Observable observable){}
 
     @Override
     public void keyTyped(KeyEvent e) {

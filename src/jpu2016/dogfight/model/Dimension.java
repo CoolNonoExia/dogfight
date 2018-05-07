@@ -4,14 +4,9 @@ public class Dimension {
     private int width;
     private int height;
 
-    public Dimension(int width, int height){
-        this.width = width;
-        this.height = height;
-    }
+    public Dimension(int width, int height){}
 
-    public Dimension(Dimension dimension){
-        this(dimension.getWidth(), dimension.getHeight());
-    }
+    public Dimension(Dimension dimension){}
 
     public int getWidth() {
         return width;
