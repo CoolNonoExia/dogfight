@@ -1,52 +1,41 @@
 package jpu2016.dogfight.model;
 
-import java.util.Observable;
+import javafx.beans.Observable;
+import java.util.*;
 
-import java.awt.*;
-import java.util.ArrayList;
+public abstract  class DogfightModel extends Observable implements IDogfightModel {
 
-public class DogfightModel extends Observable implements IDogfightModel {
-    private Sky sky;
     private ArrayList<IMobile> mobiles;
+    private Sky sky;
+    private Dimension dimension_dogfightModel;
+
 
     public DogfightModel(){
-        this.mobiles = new ArrayList<>();
-        this.sky = new Sky();
+        this.sky = new Sky(dimension_dogfightModel);
     }
-
-
-    @Override
-    public IArea getArea() {
+    public IArea getArea(){
         return null;
     }
-
-    @Override
-    public void buildArea(Dimension dimension) {
+    public void buildArea(Dimension dimension){
 
     }
-
-    @Override
-    public void addMobile(IMobile mobile) {
+    public void addMobile(IMobile mobile){
         mobiles.add(mobile);
     }
-
-    @Override
-    public void removeMobile(IMobile mobile) {
+    public void removeMobile(IMobile mobile){
         mobiles.remove(mobile);
     }
-
-    @Override
-    public ArrayList<IMobile> getMobile() {
+    public ArrayList<IMobile> getMobiles(){
         return mobiles;
     }
-
-    @Override
-    public IMobile getMobileByPlayer(int player) {
-        return null;
+    public IMobile getMobileByPlayer(int player){
+        // Recherche dans le tableau mobiles qui est le player n° .. ?????
+        return mobiles.get(player);
     }
-
-    @Override
-    public void setMobileHavesMoved() {
-
+    public void setMobilesHavesModed(){
+        //POUR L'INSTANT RIEN
+    }
+    public Sky getSky(){
+        return sky;
     }
 }

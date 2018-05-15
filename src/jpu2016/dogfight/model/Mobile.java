@@ -1,113 +1,115 @@
 package jpu2016.dogfight.model;
-
 import java.awt.*;
 
-public class Mobile implements IMobile {
+public abstract class Mobile implements IMobile{    // ABSTRACT ?!!! ON N'INSTANCIE PAS UN MOBILE VIDE, c'est un de ses enfants que l'on instancie : Plane / Missile / Cloud
+
     private int speed;
-    private Image images[];
-    private Direction direction;
-    private Dimension dimension;
     private Position position;
+    private Dimension dimension;
+    private Direction direction;
+    private Image images[]; //????
+    private String image;   //????
 
     public Mobile(Direction direction, Position position, Dimension dimension, int speed, String image){
+
         this.images = new Image[4];
         this.direction = direction;
         this.position = position;
         this.dimension = dimension;
         this.speed = speed;
+        this.image = image;
     }
-
-    private void moveUp(){
-
-    }
-
-    private void moveRight(){
-
-    }
-
-    private void moveDown(){
-
-    }
-
-    private void moveLeft(){
-
-    }
-
-    public Color getColor(){
-        return null;
-    }
-
-    @Override
-    public Direction getDirection() {
+    public Direction getDirection(){
         return direction;
     }
-
-    @Override
     public void setDirection(Direction direction) {
+
         this.direction = direction;
     }
-
-    @Override
-    public Point getPosition() {
-        return new Point();
-    }
-
-    @Override
-    public Dimension getDimension() {
+    public Dimension getDimension(){
         return dimension;
     }
-
-    @Override
-    public int getWidth() {
-        return dimension.getWidth();
+    public Position getPosition(){
+        return Position Point = new Position(); //????
     }
-
-    @Override
-    public int getHeight() {
-        return dimension.getHeight();
-    }
-
-    @Override
-    public int getSpeed() {
+    public int getSpeed(){
         return speed;
     }
-
-    @Override
-    public Image getImage() {
-        return null;
+    public int getWidth(){
+        return dimension.getWidth();
     }
-
-    @Override
-    public void move() {
-
+    public int getHeight(){
+        return dimension.getHeight();
     }
-
-    @Override
-    public void placeInArea(IArea area) {
-
+    public void move(){
+        if (getDirection().equals(Direction.UP));  moveUp();
+        if (getDirection().equals(Direction.DOWN));  moveDown();
+        if (getDirection().equals(Direction.LEFT));  moveLeft();
+        if (getDirection().equals(Direction.RIGHT));  moveRight();
     }
-
-    @Override
-    public boolean isPlayer(int player) {
-        return false;
+    public void placeInArea(IArea area){
+        //RIEN POUR L'INSTANT
     }
+    public boolean isPlayer(int player){
 
+        if (!(player == 0)) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+    private void moveUp(){
+        if (this.getHeight() < this.getWidth()){	//Permet de transiter entre largeur et longueur selon la direction précédente. On part du principe qu'on commence horizontalement
+            int transition = this.getWidth();
+            this.dimension.setWidth(getHeight());
+            this.dimension.setHeight(transition);
+        }
+        this.position.setY(this.position.getY()+this.getSpeed());
+    }
+    private void moveDown(){
+        if (this.getHeight() < this.getWidth()){	//Permet de transiter entre largeur et longueur selon la direction précédente. On part du principe qu'on commence horizontalement
+            int transition = this.getWidth();
+            this.dimension.setWidth(getHeight());
+            this.dimension.setHeight(transition);
+        }
+        this.position.setY(this.position.getY()-this.getSpeed());
+    }
+    private void moveLeft(){
+        if (this.getHeight() > this.getWidth()){	//Permet de transiter entre largeur et longueur selon la direction précédente. On part du principe qu'on commence horizontalement
+            int transition = this.getWidth();
+            this.dimension.setWidth(getHeight());
+            this.dimension.setHeight(transition);
+        }
+        this.position.setY(this.position.getY()-this.getSpeed());
+    }
+    private void moveRight(){
+        if (this.getHeight() > this.getWidth()){	///Permet de transiter entre largeur et longueur selon la direction précédente. On part du principe qu'on commence horizontalement
+            int transition = this.getWidth();
+            this.dimension.setWidth(getHeight());
+            this.dimension.setHeight(transition);
+        }
+        this.position.setY(this.position.getY()+this.getSpeed());
+    }
+    public Color getColor(){
+
+        return Color;
+    }
     public IDogfightModel getDogfightModel(){
-        return null;
+
+        return IDogfightModel;
+    }
+    public void setDogfightModel(IDogfightModel dogfightModel){
+
+        this.dogfightModel = dogfightModel; //Je sais pas si c'est ça je n'ai pas bien compris ces histoires de set un objet dogfihtModel de type IDogfightModel
+    }
+    public boolean hit(boolean boolHit){
+        return boolHit;	// Il n'y a pas de paramètre dans le diagramme normalement !!
+    }
+    public boolean isWeapon(boolean boolWeapon){
+        return boolWeapon; // Il n'y a pas de paramètre dans le diagramme normalement !!
+    }
+    public  getImage(){
+        return image;
     }
 
-    @Override
-    public void setDogfightModel(DogfightModel dogfightModel) {
-
-    }
-
-    @Override
-    public boolean hit() {
-        return false;
-    }
-
-    @Override
-    public boolean isWeapon() {
-        return false;
-    }
 }
